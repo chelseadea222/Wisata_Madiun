@@ -6,35 +6,34 @@
 include 'koneksi.php'; 
 
 // 1. DAFTAR DATA MENTAH
-$wisata_bromo = [
-    ["nama" => "Penanjakan 1", "lokasi" => "Pasuruan", "img" => "https://i1-c.pinimg.com/736x/ac/60/f5/ac60f54e7b304d86ba95de24e7ee1c6f.jpg", "lat" => "-7.9261", "lon" => "112.9394", "desc" => "Titik tertinggi melihat matahari terbit dengan latar seluruh pegunungan Bromo yang ikonik."],
-    ["nama" => "Kawah Bromo", "lokasi" => "Area Bromo", "img" => "https://hypeabis.id/assets/photo/20211202113902000000YudhaKartikaPratama082245153412MegahnyaKawahBromo.jpg", "lat" => "-7.9425", "lon" => "112.9530", "desc" => "Kawah aktif yang menakjubkan, bisa diakses dengan menaiki 250 anak tangga."],
-    ["nama" => "Pasir Berbisik", "lokasi" => "Kaldera Bromo", "img" => "https://i1-c.pinimg.com/736x/fc/e9/44/fce944eaf1f21188f4b0c4da6d8b7025.jpg", "lat" => "-7.9304", "lon" => "112.9645", "desc" => "Hamparan lautan pasir luas yang mengeluarkan suara desis saat tertiup angin."],
-    ["nama" => "Bukit Teletubbies", "lokasi" => "Savana Bromo", "img" => "https://i1-c.pinimg.com/736x/d4/5c/1e/d45c1e543df6189c76d981491a90be9b.jpg", "lat" => "-7.9610", "lon" => "112.9691", "desc" => "Bukit-bukit hijau yang cantik dan luas, mirip dengan pemandangan di film."],
-    ["nama" => "Pura Luhur Poten", "lokasi" => "Lautan Pasir", "img" => "https://i1-c.pinimg.com/736x/cd/14/27/cd142726f1e1e74c75433961cad34c49.jpg", "lat" => "-7.9351", "lon" => "112.9515", "desc" => "Pura sakral tempat ibadah suku Tengger yang berdiri kokoh di tengah pasir."],
-    ["nama" => "Bukit Kingkong", "lokasi" => "Pasuruan", "img" => "https://i1-c.pinimg.com/736x/d7/c5/75/d7c5753291cd9107159b772e7bda0ebe.jpg", "lat" => "-7.9212", "lon" => "112.9421", "desc" => "Spot sunrise alternatif yang menawarkan sudut pandang tebing yang unik."],
-    ["nama" => "Bukit Cinta", "lokasi" => "Pasuruan", "img" => "https://i1-c.pinimg.com/736x/d1/5f/df/d15fdfaf936d915f634eabc0a082e7c6.jpg", "lat" => "-7.9250", "lon" => "112.9400", "desc" => "Love Hill, tempat romantis untuk menikmati pemandangan kaldera Bromo."],
-    ["nama" => "Gunung Widodaren", "lokasi" => "Dekat Kawah", "img" => "https://i.pinimg.com/736x/c5/00/67/c500670b992fd00d635ddde1cbae3ca3.jpg", "lat" => "-7.9450", "lon" => "112.9500", "desc" => "Tebing batu yang megah, sering menjadi lokasi favorit foto bersama Jeep."],
-    ["nama" => "Seruni Point", "lokasi" => "Probolinggo", "img" => "https://i1-c.pinimg.com/736x/2a/d1/90/2ad1900556e92f4820841c56806c9955.jpg", "lat" => "-7.9150", "lon" => "112.9550", "desc" => "Puncak penanjakan ke-2 yang diakses melalui tangga dari arah Probolinggo."],
-    ["nama" => "Padang Savana", "lokasi" => "Selatan Bromo", "img" => "https://i1-c.pinimg.com/736x/7e/7d/31/7e7d316adcd2acbc880e9ecf434a0f40.jpg", "lat" => "-7.9650", "lon" => "112.9700", "desc" => "Padang rumput hijau yang memberikan sisi lembut dari alam liar Bromo."],
-    ["nama" => "B-29 Argosari", "lokasi" => "Lumajang", "img" => "https://i1-c.pinimg.com/736x/8e/64/b0/8e64b009b8d96f2f8430c345c396aa9f.jpg", "lat" => "-8.0200", "lon" => "113.0000", "desc" => "Dikenal sebagai negeri di atas awan, melihat Bromo dari sisi timur."]
+$wisata_madiun = [
+    ["nama" => "Pahlawan Street Center (PSC)", "lokasi" => "Kartoharjo", "img" => "https://assets-a1.kompasiana.com/items/album/2024/12/12/img-0113-675a6be334777c25d2352533.jpeg", "desc" => "Malioboro-nya Kota Madiun yang dihiasi replika ikon dunia ikonik seperti Patung Merlion dan Menara Eiffel."],
+    ["nama" => "Taman Sumber Umis", "lokasi" => "Manguharjo", "img" => "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH8uUwWANvaY_KcCc_DOCFanpBPe5Sn2-35TARv1y8vM2jR3gkRkGiqO3fMKHXbccYp-6BUTWPF5vIggnb5Ami70_Cp3RGjqIXl3AGoR0kRWbG6oKpkYc4NGZXu3vlgmQLXR_4U=s680-w680-h510-rw", "desc" => "Taman kota indah di pusat Madiun yang memiliki replika Ka'bah dengan suasana malam yang megah."],
+    ["nama" => "Alun-Alun Kota Madiun", "lokasi" => "Manguharjo", "img" => "https://i.pinimg.com/736x/38/0e/4e/380e4ee1282c408ecc7ea699bbfed5f7.jpg", "desc" => "Pusat aktivitas warga dengan ruang terbuka hijau luas, Masjid Agung, dan dikelilingi jajaran kuliner lokal."],
+    ["nama" => "Taman Bantaran Kali Madiun", "lokasi" => "Manguharjo", "img" => "https://i.pinimg.com/736x/48/d3/1c/48d31cfe40c5fbbf57aae4657076c328.jpg", "desc" => "Spot santai di pinggir sungai dengan fasilitas olahraga, gazebo, jembatan gantung, dan pemandangan asri."],
+    ["nama" => "Monumen Kresek", "lokasi" => "Wungu", "img" => "https://i.pinimg.com/736x/e1/7f/3d/e17f3d23eb9e1ebaf93a0a110e042856.jpg", "desc" => "Monumen bersejarah yang penuh dengan nilai edukasi perjuangan bangsa, dikelilingi taman rindang yang tenang."],
+    ["nama" => "Madiun Umbul Square", "lokasi" => "Dolopo", "img" => "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800", "desc" => "Taman hiburan keluarga terpadu yang menyediakan wahana permainan air, kincir ria, dan mini zoo satwa."],
+    ["nama" => "Taman Trembesi", "lokasi" => "Kartoharjo", "img" => "https://static.promediateknologi.id/crop/0x0:0x0/1200x0/webp/photo/p1/867/2024/01/27/Picsart_24-01-27_20-24-31-261-729900772.jpg", "desc" => "Kawasan hutan kota mini dengan jajaran pohon trembesi raksasa yang sejuk, rindang, dan alami."],
+    ["nama" => "Waduk Bening Widas", "lokasi" => "Saradan", "img" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQPN1tWAOQZVv-zr1HOZUONGea7I93Af8RVg&s", "desc" => "Wisata air waduk yang menawarkan panorama alam pegunungan, spot memancing, dan bumi perkemahan."],
+    ["nama" => "Desa Wisata Brumbun", "lokasi" => "Wungu", "img" => "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800", "desc" => "Destinasi wisata alam pedesaan lereng Wilis yang menawarkan aktivitas river tubing menantang."],
+    ["nama" => "Ngrowo Bening Edupark", "lokasi" => "Taman", "img" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1kaTQ4BcEAhSbmwe6UaDPV17HGbXQ5MUKw&s", "desc" => "Taman edukasi agrowisata perkotaan, tempat belajar menanam sayur hidroponik, peternakan, dan bersantai."],
+    ["nama" => "Hutan Pinus NONGKO IJO", "lokasi" => "Kare", "img" => "https://indonesiatraveler.id/wp-content/uploads/2020/10/Madiun-Nongko-Ijo3-e1602582835404.jpg", "desc" => "Pesona air terjun tersembunyi di lereng Gunung Wilis yang menyuguhkan udara sejuk dan air super jernih."]
 ];
 
 // 2. PROSES OTOMATIS MENJADI ARRAY KEY-VALUE
-// ... array $wisata_bromo di sini ...
+// ... array $wisata_madiun di sini ...
 
 // 2. PROSES HARUS DI ATAS PENGAMBILAN NAMA_ITEM
-$data_wisata_default = [];
-foreach ($wisata_bromo as $w) {
+foreach ($wisata_madiun as $w) {
     $data_wisata_default[$w['nama']] = [
         "lokasi"        => $w['lokasi'],
         "img"           => $w['img'],
         "telp"          => "08123456789",
-        "kondisi_jalan" => "Kondisi akses jalan cukup bagus (Jeep & Motor).",
+        "kondisi_jalan" => "Kondisi akses jalan cukup bagus.",
         "fasilitas"     => ["Musholla", "Toilet", "Warung"],
-        "harga"         => 5000,
-        "lat"           => $w['lat'],
-        "lon"           => $w['lon']
+        // Gunakan operator null coalescing (??) agar tidak error jika data kosong
+        "lat"           => $w['lat'] ?? '-7.6293', 
+        "lon"           => $w['lon'] ?? '111.5231'
     ];
 }
 
@@ -44,8 +43,11 @@ $nama_item = isset($_GET['item']) ? $_GET['item'] : 'Penanjakan 1';
 // 4. MENGISI VARIABEL $detail
 $detail = isset($data_wisata_default[$nama_item]) ? $data_wisata_default[$nama_item] : reset($data_wisata_default);
 // 5. LOGIKA DATABASE: Statistik Rating (Tetap seperti kode Anda)
+// Ganti 'ulasan' menjadi 'ulasan_wisata' (atau sesuaikan dengan database Anda)
+// Ganti 'ulasan_wisata' dengan nama tabel yang benar
+// Jika tabelnya bernama 'ulasan', gunakan ini:
 $query_stats = mysqli_query($koneksi, "SELECT 
-    AVG(rating) as rata_rata, 
+    IFNULL(AVG(rating), 0) as rata_rata, 
     COUNT(*) as total,
     COUNT(IF(rating = 5, 1, NULL)) as b5,
     COUNT(IF(rating = 4, 1, NULL)) as b4,
@@ -55,7 +57,8 @@ $query_stats = mysqli_query($koneksi, "SELECT
     FROM ulasan WHERE nama_wisata = '$nama_item'");
 
 $stats = mysqli_fetch_assoc($query_stats);
-$rating_rata = round($stats['rata_rata'], 1) ?: 0;
+// Pastikan nilai $stats['rata_rata'] dikonversi ke float atau 0 jika null
+$rating_rata = round((float)($stats['rata_rata'] ?? 0), 1);
 $total_ulasan = $stats['total'];
 ?>
 
