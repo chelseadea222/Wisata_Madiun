@@ -32,14 +32,6 @@ $estimasi_jalur = [
     ["opsi" => "Jalur Lereng Wilis", "biaya" => "Rp 50.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800"]
 ];
 $koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
-
-// 3. DATA KULINER MADIUN
-$kuliner_madiun = [
-    ["nama" => "Nasi Pecel Madiun Asli", "img" => "https://images.unsplash.com/photo-1512058560366-cd242d4ba351?q=80&w=500", "status" => "Sedang Buka"],
-    ["nama" => "Pentol Corah Madiun", "img" => "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=500", "status" => "Sedang Buka"],
-    ["nama" => "Brem Tradisional Madiun", "img" => "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=500", "status" => "Sedang Buka"],
-    ["nama" => "Madumongso Legit", "img" => "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=500", "status" => "Tutup Sementara"]
-];
 ?>
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
@@ -94,7 +86,6 @@ $kuliner_madiun = [
             <div class="hidden md:flex gap-8 font-semibold text-sm text-slate-500 items-center">
                 <a href="#destinasi" class="hover:text-brand transition-colors">Destinasi</a>
                 <a href="#estimasi" class="hover:text-brand transition-colors">Estimasi</a>
-                <a href="#kuliner" class="hover:text-brand transition-colors">Kuliner</a>
             </div>
         </div>
     </nav>
@@ -128,13 +119,6 @@ $kuliner_madiun = [
     <!-- QUICK MENU SECTION -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        
-        <a href="#kuliner" class="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center text-center gap-3 hover:-translate-y-2 transition-all border border-slate-100">
-            <div class="w-12 h-12 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-2xl">
-                <i class="bi bi-egg-fried"></i>
-            </div>
-            <h4 class="font-bold text-sm text-brandDark">Kuliner</h4>
-        </a>
         
         <a href="booking.php" class="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center text-center gap-3 hover:-translate-y-2 transition-all border border-slate-100">
             <div class="w-12 h-12 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-2xl">
@@ -242,50 +226,6 @@ $kuliner_madiun = [
     </div>
 </section>
 
-    <!-- KULINER SECTION -->
-    <section id="kuliner" class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold text-brandDark mb-10 text-center md:text-left">Kuliner Wajib Coba</h2>
-        
-        <div class="relative flex items-center">
-            
-            <button onclick="scrollSection('kuliner-scroll', 'left')" 
-                    class="absolute -left-5 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand hover:text-white transition-all hidden md:flex">
-                <i class="bi bi-chevron-left text-lg"></i>
-            </button>
-
-            <div id="kuliner-scroll" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar scroll-smooth w-full">
-                <?php foreach ($kuliner_madiun as $index => $k): ?>
-                <div class="w-[70vw] sm:w-[350px] flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md snap-start h-[300px] relative group border border-slate-100">
-                    <img src="<?= htmlspecialchars($k['img']) ?>" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent flex flex-col justify-end p-6 text-left">
-                        
-                        <?php if($k['status'] == 'Sedang Buka'): ?>
-                            <span class="text-green-400 text-xs font-bold mb-2 flex items-center gap-1.5"><i class="bi bi-clock-fill"></i> Sedang Buka</span>
-                        <?php else: ?>
-                            <span class="text-red-400 text-xs font-bold mb-2 flex items-center gap-1.5"><i class="bi bi-clock-history"></i> Tutup Sementara</span>
-                        <?php endif; ?>
-                        
-                        <h3 class="text-white font-extrabold text-xl leading-tight"><?= htmlspecialchars($k['nama']) ?></h3>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-
-            <button onclick="scrollSection('kuliner-scroll', 'right')" 
-                    class="absolute -right-5 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand hover:text-white transition-all hidden md:flex">
-                <i class="bi bi-chevron-right text-lg"></i>
-            </button>
-        </div>
-        
-        <div class="flex justify-center gap-2 mt-6">
-            <?php foreach ($kuliner_madiun as $index => $k): ?>
-                <button onclick="scrollToIndex('kuliner-scroll', <?= $index ?>)" class="kuliner-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
     <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
@@ -308,34 +248,46 @@ $kuliner_madiun = [
     </footer>
 
     <!-- JAVASCRIPT LOGIC (Scroll & Sinkronisasi Dots) -->
-    <script>
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // 1. FUNGSI PENCARIAN
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                const cards = document.querySelectorAll('.destinasi-card');
+                
+                cards.forEach(card => {
+                    const title = card.querySelector('h3').innerText.toLowerCase();
+                    card.style.display = title.includes(query) ? "flex" : "none";
+                });
+            });
+        }
+
+        // 2. FUNGSI SCROLL KONTROL
+        // Menggunakan delegasi atau fungsi tunggal untuk menghindari duplikasi
+        window.scrollSection = function(containerId, direction) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const cardWidth = 320; // Sesuaikan dengan lebar card Anda
+            container.scrollBy({ 
+                left: direction === 'left' ? -cardWidth : cardWidth, 
+                behavior: 'smooth' 
+            });
+        };
+
+        // 3. FUNGSI DOTS/OBSERVER
         const estimasiData = <?= json_encode($estimasi_jalur) ?>;
         const btnCekRute = document.getElementById('btn-cek-rute');
 
-        // Fungsi Panah Scroll (Untuk Destinasi)
-        function scrollSection(containerId, direction) {
-            const container = document.getElementById(containerId);
-            const cardWidth = container.querySelector('div').offsetWidth + 24; // Width + Gap(6)
-            container.scrollBy({ left: direction === 'left' ? -cardWidth : cardWidth, behavior: 'smooth' });
-        }
-
-        // Fungsi Dots Click
-        function scrollToIndex(containerId, index) {
-            const container = document.getElementById(containerId);
-            const cardWidth = container.querySelector('div').offsetWidth + 24; 
-            container.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
-        }
-
-        // Sinkronisasi Active Dot saat Scroll
         function setupScrollObserver(containerId, dotClass, activeColor, activeWidth, inactiveColor, isEstimasi = false) {
             const container = document.getElementById(containerId);
             const dots = document.querySelectorAll(`.${dotClass}`);
             if (!container) return;
 
-            const updateDots = () => {
-                const cardWidth = container.querySelector('div').offsetWidth + 24;
-                const index = Math.round(container.scrollLeft / cardWidth);
-                
+            container.addEventListener('scroll', () => {
+                const index = Math.round(container.scrollLeft / 320);
                 dots.forEach((dot, i) => {
                     if(i === index) {
                         dot.classList.remove(inactiveColor, 'w-2');
@@ -346,26 +298,13 @@ $kuliner_madiun = [
                     }
                 });
 
-                // Update Tombol khusus Estimasi
-                if (isEstimasi && estimasiData[index]) {
-                    const ruteNama = encodeURIComponent(estimasiData[index].opsi);
-                    btnCekRute.href = `peta_rute.php?jalur=${ruteNama}`;
+                if (isEstimasi && btnCekRute && estimasiData[index]) {
+                    btnCekRute.href = `peta_rute.php?jalur=${encodeURIComponent(estimasiData[index].opsi)}`;
                 }
-            };
-
-            container.addEventListener('scroll', updateDots);
-            // Inisialisasi tampilan awal
-            updateDots();
+            });
         }
 
-        // Pasang Observer
-        window.addEventListener('DOMContentLoaded', () => {
-            // Setup Estimasi (Warna Teal terang untuk background gelap)
-            setupScrollObserver('estimasi-scroll', 'estimasi-dot', 'bg-accent', 'w-8', 'bg-slate-600', true);
-            
-            // Setup Kuliner (Warna Teal gelap untuk background terang)
-            setupScrollObserver('kuliner-scroll', 'kuliner-dot', 'bg-brand', 'w-8', 'bg-slate-300', false);
-        });
-    </script>
+        setupScrollObserver('estimasi-scroll', 'estimasi-dot', 'bg-accent', 'w-8', 'bg-slate-600', true);    });
+</script>
 </body>
 </html>
