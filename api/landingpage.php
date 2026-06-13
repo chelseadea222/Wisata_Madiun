@@ -8,26 +8,30 @@ require_once __DIR__ . '/koneksi.php';
 
 // 1. DATA DESTINASI WISATA (Lengkap 11 Lokasi di Madiun & Sekitarnya)
 $wisata_madiun = [
-    ["nama" => "Pahlawan Street Center (PSC)", "lokasi" => "Kartoharjo", "img" => "https://images.unsplash.com/photo-1625244724108-a728149186e0?q=80&w=800", "desc" => "Malioboro-nya Kota Madiun yang dihiasi replika ikon dunia ikonik seperti Patung Merlion dan Menara Eiffel."],
-    ["nama" => "Taman Sumber Umis", "lokasi" => "Kartoharjo", "img" => "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=800", "desc" => "Taman kota indah di pusat Madiun yang memiliki replika Ka'bah dengan suasana malam yang megah."],
-    ["nama" => "Alun-Alun Kota Madiun", "lokasi" => "Manguharjo", "img" => "https://images.unsplash.com/photo-1596422846543-75c6fc1f7f67?q=80&w=800", "desc" => "Pusat aktivitas warga dengan ruang terbuka hijau luas, Masjid Agung, dan dikelilingi jajaran kuliner lokal."],
-    ["nama" => "Taman Bantaran Kali Madiun", "lokasi" => "Manguharjo", "img" => "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800", "desc" => "Spot santai di pinggir sungai dengan fasilitas olahraga, gazebo, jembatan gantung, dan pemandangan asri."],
-    ["nama" => "Monumen Kresek", "lokasi" => "Wungu", "img" => "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?q=80&w=800", "desc" => "Monumen bersejarah yang penuh dengan nilai edukasi perjuangan bangsa, dikelilingi taman rindang yang tenang."],
+    ["nama" => "Pahlawan Street Center (PSC)", "lokasi" => "Kartoharjo", "img" => "https://assets-a1.kompasiana.com/items/album/2024/12/12/img-0113-675a6be334777c25d2352533.jpeg", "desc" => "Malioboro-nya Kota Madiun yang dihiasi replika ikon dunia ikonik seperti Patung Merlion dan Menara Eiffel."],
+    ["nama" => "Taman Sumber Umis", "lokasi" => "Manguharjo", "img" => "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH8uUwWANvaY_KcCc_DOCFanpBPe5Sn2-35TARv1y8vM2jR3gkRkGiqO3fMKHXbccYp-6BUTWPF5vIggnb5Ami70_Cp3RGjqIXl3AGoR0kRWbG6oKpkYc4NGZXu3vlgmQLXR_4U=s680-w680-h510-rw", "desc" => "Taman kota indah di pusat Madiun yang memiliki replika Ka'bah dengan suasana malam yang megah."],
+    ["nama" => "Alun-Alun Kota Madiun", "lokasi" => "Manguharjo", "img" => "https://i.pinimg.com/736x/38/0e/4e/380e4ee1282c408ecc7ea699bbfed5f7.jpg", "desc" => "Pusat aktivitas warga dengan ruang terbuka hijau luas, Masjid Agung, dan dikelilingi jajaran kuliner lokal."],
+    ["nama" => "Taman Bantaran Kali Madiun", "lokasi" => "Manguharjo", "img" => "https://i.pinimg.com/736x/48/d3/1c/48d31cfe40c5fbbf57aae4657076c328.jpg", "desc" => "Spot santai di pinggir sungai dengan fasilitas olahraga, gazebo, jembatan gantung, dan pemandangan asri."],
+    ["nama" => "Monumen Kresek", "lokasi" => "Wungu", "img" => "https://i.pinimg.com/736x/e1/7f/3d/e17f3d23eb9e1ebaf93a0a110e042856.jpg", "desc" => "Monumen bersejarah yang penuh dengan nilai edukasi perjuangan bangsa, dikelilingi taman rindang yang tenang."],
     ["nama" => "Madiun Umbul Square", "lokasi" => "Dolopo", "img" => "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800", "desc" => "Taman hiburan keluarga terpadu yang menyediakan wahana permainan air, kincir ria, dan mini zoo satwa."],
-    ["nama" => "Taman Trembesi", "lokasi" => "Kartoharjo", "img" => "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=800", "desc" => "Kawasan hutan kota mini dengan jajaran pohon trembesi raksasa yang sejuk, rindang, dan alami."],
-    ["nama" => "Waduk Bening Widas", "lokasi" => "Saradan", "img" => "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800", "desc" => "Wisata air waduk yang menawarkan panorama alam pegunungan, spot memancing, dan bumi perkemahan."],
+    ["nama" => "Taman Trembesi", "lokasi" => "Kartoharjo", "img" => "https://static.promediateknologi.id/crop/0x0:0x0/1200x0/webp/photo/p1/867/2024/01/27/Picsart_24-01-27_20-24-31-261-729900772.jpg", "desc" => "Kawasan hutan kota mini dengan jajaran pohon trembesi raksasa yang sejuk, rindang, dan alami."],
+    ["nama" => "Waduk Bening Widas", "lokasi" => "Saradan", "img" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQPN1tWAOQZVv-zr1HOZUONGea7I93Af8RVg&s", "desc" => "Wisata air waduk yang menawarkan panorama alam pegunungan, spot memancing, dan bumi perkemahan."],
     ["nama" => "Desa Wisata Brumbun", "lokasi" => "Wungu", "img" => "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800", "desc" => "Destinasi wisata alam pedesaan lereng Wilis yang menawarkan aktivitas river tubing menantang."],
-    ["nama" => "Ngrowo Bening Edupark", "lokasi" => "Taman", "img" => "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800", "desc" => "Taman edukasi agrowisata perkotaan, tempat belajar menanam sayur hidroponik, peternakan, dan bersantai."],
-    ["nama" => "Air Terjun Kudusan", "lokasi" => "Kare", "img" => "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800", "desc" => "Pesona air terjun tersembunyi di lereng Gunung Wilis yang menyuguhkan udara sejuk dan air super jernih."]
+    ["nama" => "Ngrowo Bening Edupark", "lokasi" => "Taman", "img" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1kaTQ4BcEAhSbmwe6UaDPV17HGbXQ5MUKw&s", "desc" => "Taman edukasi agrowisata perkotaan, tempat belajar menanam sayur hidroponik, peternakan, dan bersantai."],
+    ["nama" => "Hutan Pinus NONGKO IJO", "lokasi" => "Kare", "img" => "https://indonesiatraveler.id/wp-content/uploads/2020/10/Madiun-Nongko-Ijo3-e1602582835404.jpg", "desc" => "Pesona air terjun tersembunyi di lereng Gunung Wilis yang menyuguhkan udara sejuk dan air super jernih."]
 ];
 
-// 2. DATA ESTIMASI JALUR MENUJU MADIUN
+// 2. DATA KOORDINAT DESTINASI (Untuk rute peta)
+// 1. DATA DESTINASI WISATA TERPADU (Koordinat + Gambar + Deskripsi Singkat)
+
+// Tambahkan ini di bagian atas file, bersama variabel lainnya
 $estimasi_jalur = [
-    ["opsi" => "Rute Surabaya", "img" => "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800", "biaya" => "± Rp 80rb - 150rb", "transport" => "Tol Trans Jawa / Kereta Api"],
-    ["opsi" => "Rute Solo / Jogja", "img" => "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800", "biaya" => "± Rp 60rb - 120rb", "transport" => "Kereta Api / Jalur Nasional"],
-    ["opsi" => "Rute Jakarta", "img" => "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800", "biaya" => "± Rp 250rb - 500rb", "transport" => "Tol Trans Jawa / Bus Eksekutif"],
-    ["opsi" => "Rute Kediri / Nganjuk", "img" => "https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=800", "biaya" => "± Rp 30rb - 70rb", "transport" => "Motor / Mobil / Bus Provinsi"]
+    ["opsi" => "Jalur Dalam Kota", "biaya" => "Rp 15.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800"],
+    ["opsi" => "Jalur Lereng Wilis", "biaya" => "Rp 50.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800"],
+    ["opsi" => "Jalur Dalam Kota", "biaya" => "Rp 15.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800"],
+    ["opsi" => "Jalur Lereng Wilis", "biaya" => "Rp 50.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800"]
 ];
+$koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
 
 // 3. DATA KULINER MADIUN
 $kuliner_madiun = [
@@ -123,72 +127,61 @@ $kuliner_madiun = [
 
     <!-- QUICK MENU SECTION -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <a href="#kuliner" class="bg-white p-6 rounded-[2rem] shadow-xl shadow-slate-200/50 flex items-center gap-5 hover:-translate-y-2 transition-all duration-300 group border border-slate-100">
-                <div class="w-16 h-16 rounded-2xl bg-brand/10 text-brand flex items-center justify-center text-3xl group-hover:bg-brand group-hover:text-white transition-colors">
-                    <i class="bi bi-egg-fried"></i>
-                </div>
-                <div>
-                    <h4 class="font-bold text-xl text-brandDark">Kuliner Lokal</h4>
-                    <p class="text-slate-500 text-sm mt-1">Cicipi cita rasa otentik.</p>
-                </div>
-            </a>
-            
-            <a href="booking.php" class="bg-white p-6 rounded-[2rem] shadow-xl shadow-slate-200/50 flex items-center gap-5 hover:-translate-y-2 transition-all duration-300 group border border-slate-100">
-                <div class="w-16 h-16 rounded-2xl bg-brand/10 text-brand flex items-center justify-center text-3xl group-hover:bg-brand group-hover:text-white transition-colors">
-                    <i class="bi bi-house-door"></i>
-                </div>
-                <div>
-                    <h4 class="font-bold text-xl text-brandDark">Penginapan</h4>
-                    <p class="text-slate-500 text-sm mt-1">Hotel & Homestay nyaman.</p>
-                </div>
-            </a>
-            
-            <a href="beli_tiket.php" class="bg-white p-6 rounded-[2rem] shadow-xl shadow-slate-200/50 flex items-center gap-5 hover:-translate-y-2 transition-all duration-300 group border border-slate-100">
-                <div class="w-16 h-16 rounded-2xl bg-brand/10 text-brand flex items-center justify-center text-3xl group-hover:bg-brand group-hover:text-white transition-colors">
-                    <i class="bi bi-ticket-perforated"></i>
-                </div>
-                <div>
-                    <h4 class="font-bold text-xl text-brandDark">Paket Wisata</h4>
-                    <p class="text-slate-500 text-sm mt-1">Jelajahi tanpa ribet.</p>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- DESTINASI WISATA SECTION -->
-    <section id="destinasi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
-        <div class="flex justify-between items-end mb-10">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-brandDark tracking-tight mb-2">Destinasi Populer</h2>
-                <div class="w-16 h-1.5 bg-accent rounded-full"></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        
+        <a href="#kuliner" class="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center text-center gap-3 hover:-translate-y-2 transition-all border border-slate-100">
+            <div class="w-12 h-12 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-2xl">
+                <i class="bi bi-egg-fried"></i>
             </div>
-            
-            <!-- Navigasi Panah -->
-            <div class="hidden md:flex gap-3">
-                <button onclick="scrollSection('destinasi-scroll', 'left')" class="w-12 h-12 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand hover:text-white hover:border-brand transition-all">
-                    <i class="bi bi-chevron-left text-lg"></i>
-                </button>
-                <button onclick="scrollSection('destinasi-scroll', 'right')" class="w-12 h-12 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand hover:text-white hover:border-brand transition-all">
-                    <i class="bi bi-chevron-right text-lg"></i>
-                </button>
+            <h4 class="font-bold text-sm text-brandDark">Kuliner</h4>
+        </a>
+        
+        <a href="booking.php" class="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center text-center gap-3 hover:-translate-y-2 transition-all border border-slate-100">
+            <div class="w-12 h-12 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-2xl">
+                <i class="bi bi-house-door"></i>
             </div>
-        </div>
+            <h4 class="font-bold text-sm text-brandDark">Penginapan</h4>
+        </a>
+        
+        <a href="beli_tiket.php" class="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center text-center gap-3 hover:-translate-y-2 transition-all border border-slate-100">
+            <div class="w-12 h-12 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-2xl">
+                <i class="bi bi-ticket-perforated"></i>
+            </div>
+            <h4 class="font-bold text-sm text-brandDark">Beli Tiket</h4>
+        </a>
 
-        <!-- Scroll Container -->
-        <div id="destinasi-scroll" class="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory no-scrollbar scroll-smooth -mx-4 px-4 sm:mx-0 sm:px-0">
+        <a href="#estimasi" class="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center text-center gap-3 hover:-translate-y-2 transition-all border border-slate-100">
+            <div class="w-12 h-12 rounded-xl bg-brand/10 text-brand flex items-center justify-center text-2xl">
+                <i class="bi bi-map"></i>
+            </div>
+            <h4 class="font-bold text-sm text-brandDark">Rute Jalan</h4>
+        </a>
+    </div>
+</section>
+
+<section id="destinasi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+    <div class="flex justify-between items-center mb-10">
+        <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-brandDark tracking-tight mb-2">Destinasi Populer</h2>
+            <div class="w-16 h-1.5 bg-accent rounded-full"></div>
+        </div>
+    </div>
+
+    <div class="relative flex items-center">
+        <button onclick="scrollSection('destinasi-scroll', 'left')" 
+                class="absolute -left-5 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand hover:text-white transition-all hidden md:flex">
+            <i class="bi bi-chevron-left text-lg"></i>
+        </button>
+
+        <div id="destinasi-scroll" class="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory no-scrollbar scroll-smooth w-full">
             <?php foreach ($wisata_madiun as $w): ?>
             <div class="w-[85vw] sm:w-[400px] flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col snap-start group">
-                <!-- Gambar & Label -->
                 <div class="relative h-56 overflow-hidden">
-                    <img src="<?= $w['img'] ?>" alt="<?= htmlspecialchars($w['nama']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <img src="<?= htmlspecialchars($w['img']) ?>" alt="<?= htmlspecialchars($w['nama']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5">
                         <i class="bi bi-geo-alt-fill text-accent"></i> <?= htmlspecialchars($w['lokasi']) ?>
                     </div>
                 </div>
-                <!-- Konten Card -->
                 <div class="p-6 flex flex-col flex-grow text-left">
                     <h3 class="font-extrabold text-xl text-brandDark mb-2 line-clamp-1"><?= htmlspecialchars($w['nama']) ?></h3>
                     <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">"<?= htmlspecialchars($w['desc']) ?>"</p>
@@ -202,62 +195,69 @@ $kuliner_madiun = [
             </div>
             <?php endforeach; ?>
         </div>
-    </section>
+
+        <button onclick="scrollSection('destinasi-scroll', 'right')" 
+                class="absolute -right-5 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand hover:text-white transition-all hidden md:flex">
+            <i class="bi bi-chevron-right text-lg"></i>
+        </button>
+    </div>
+</section>
 
     <!-- ESTIMASI PERJALANAN SECTION -->
-    <section id="estimasi" class="bg-brandDark py-24 border-t border-slate-800 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="mb-14">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Estimasi Perjalanan</h2>
-                <p class="text-slate-400 font-medium">Pilih rute perjalanan paling efisien menuju Kota Madiun</p>
-            </div>
+    <section id="estimasi" class="bg-brandDark py-24 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <div class="mb-14">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Estimasi Perjalanan</h2>
+            <p class="text-slate-400 font-medium">Pilih rute perjalanan paling efisien menuju Kota Madiun</p>
+        </div>
 
-            <div id="estimasi-scroll" class="flex overflow-x-auto gap-6 pb-10 snap-x snap-mandatory no-scrollbar scroll-smooth -mx-4 px-4 sm:mx-0 sm:px-0">
-                <?php foreach ($estimasi_jalur as $index => $e): ?>
-                <div class="w-[85vw] sm:w-[450px] lg:w-[500px] flex-shrink-0 bg-slate-800 rounded-3xl overflow-hidden relative snap-center h-[350px] shadow-2xl border border-white/10 group">
-                    <img src="<?= $e['img'] ?>" alt="<?= $e['opsi'] ?>" class="w-full h-full object-cover opacity-40 group-hover:scale-110 group-hover:opacity-30 transition duration-700">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent flex flex-col justify-end p-8 text-left">
-                        <span class="inline-flex w-max items-center gap-1.5 px-3 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30 text-xs font-bold mb-4 uppercase tracking-widest">
-                            <i class="bi bi-circle-fill text-[8px] animate-pulse"></i> Jalur Aktif
-                        </span>
-                        <h3 class="text-white font-black text-3xl mb-2"><?= htmlspecialchars($e['opsi']) ?></h3>
-                        <p class="text-accent font-bold text-xl mb-4"><?= $e['biaya'] ?></p>
-                        
-                        <div class="flex items-center gap-3 text-slate-300 text-sm font-semibold border-t border-white/10 pt-4">
-                            <i class="bi bi-car-front-fill opacity-70"></i>
-                            <span><?= $e['transport'] ?></span>
-                        </div>
-                    </div>
+        <div class="relative flex items-center">
+            <button onclick="scrollSection('estimasi-scroll', 'left')" 
+                    class="absolute -left-5 z-20 w-12 h-12 rounded-full bg-white text-brand shadow-xl border border-slate-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all hidden md:flex">
+                <i class="bi bi-chevron-left text-lg"></i>
+            </button>
+
+            <div id="estimasi-scroll" class="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory no-scrollbar scroll-smooth w-full">
+                <?php foreach ($estimasi_jalur as $e): ?>
+                <div class="w-[300px] flex-shrink-0 bg-slate-800 rounded-3xl p-6 border border-white/10 shadow-lg snap-start">
+                    <img src="<?= htmlspecialchars($e['img'] ?? '') ?>" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <h3 class="text-white font-black text-xl mb-2"><?= htmlspecialchars($e['opsi'] ?? 'Rute') ?></h3>
+                    <p class="text-accent font-bold mb-4"><?= htmlspecialchars($e['biaya'] ?? '-') ?></p>
+                    <div class="text-slate-300 text-sm"><i class="bi bi-car-front-fill"></i> <?= htmlspecialchars($e['transport'] ?? '-') ?></div>
                 </div>
                 <?php endforeach; ?>
             </div>
 
-            <!-- Dots Estimasi -->
-            <div class="flex justify-center gap-2 mt-2 mb-12">
-                <?php foreach ($estimasi_jalur as $index => $e): ?>
-                <button onclick="scrollToIndex('estimasi-scroll', <?= $index ?>)" class="estimasi-dot w-2 h-2 rounded-full bg-slate-600 transition-all duration-300" data-idx="<?= $index ?>"></button>
-                <?php endforeach; ?>
-            </div>
-
-            <!-- Tombol Aksi Utama -->
-            <div class="flex justify-center">
-                <a id="btn-cek-rute" href="peta_rute.php?jalur=<?= urlencode($estimasi_jalur[0]['opsi']) ?>" class="bg-accent text-white px-10 py-4 rounded-full flex items-center justify-center gap-3 text-base font-bold hover:bg-[#d04b06] hover:-translate-y-1 transition-all shadow-lg shadow-accent/40">
-                    <i class="bi bi-map-fill"></i> Lihat Peta Rute
-                </a>
-            </div>
+            <button onclick="scrollSection('estimasi-scroll', 'right')" 
+                    class="absolute -right-5 z-20 w-12 h-12 rounded-full bg-white text-brand shadow-xl border border-slate-100 flex items-center justify-center hover:bg-brand hover:text-white transition-all hidden md:flex">
+                <i class="bi bi-chevron-right text-lg"></i>
+            </button>
         </div>
-    </section>
+
+        <div class="flex justify-center mt-10">
+            <a id="btn-cek-rute" href="#" class="bg-accent text-white px-10 py-4 rounded-full flex items-center gap-3 font-bold hover:bg-[#d04b06] transition-all shadow-lg shadow-accent/40">
+                <i class="bi bi-map-fill"></i> Lihat Peta Rute
+            </a>
+        </div>
+    </div>
+</section>
 
     <!-- KULINER SECTION -->
     <section id="kuliner" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-brandDark mb-10 text-center md:text-left">Kuliner Wajib Coba</h2>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-brandDark mb-10 text-center md:text-left">Kuliner Wajib Coba</h2>
+        
+        <div class="relative flex items-center">
             
-            <div id="kuliner-scroll" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar scroll-smooth -mx-4 px-4 sm:mx-0 sm:px-0">
+            <button onclick="scrollSection('kuliner-scroll', 'left')" 
+                    class="absolute -left-5 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand hover:text-white transition-all hidden md:flex">
+                <i class="bi bi-chevron-left text-lg"></i>
+            </button>
+
+            <div id="kuliner-scroll" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar scroll-smooth w-full">
                 <?php foreach ($kuliner_madiun as $index => $k): ?>
                 <div class="w-[70vw] sm:w-[350px] flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md snap-start h-[300px] relative group border border-slate-100">
-                    <img src="<?= $k['img'] ?>" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    <img src="<?= htmlspecialchars($k['img']) ?>" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent flex flex-col justify-end p-6 text-left">
                         
                         <?php if($k['status'] == 'Sedang Buka'): ?>
@@ -271,14 +271,20 @@ $kuliner_madiun = [
                 </div>
                 <?php endforeach; ?>
             </div>
-            
-            <div class="flex justify-center md:justify-start gap-2 mt-2">
-                <?php foreach ($kuliner_madiun as $index => $k): ?>
-                <button onclick="scrollToIndex('kuliner-scroll', <?= $index ?>)" class="kuliner-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300" data-idx="<?= $index ?>"></button>
-                <?php endforeach; ?>
-            </div>
+
+            <button onclick="scrollSection('kuliner-scroll', 'right')" 
+                    class="absolute -right-5 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand hover:text-white transition-all hidden md:flex">
+                <i class="bi bi-chevron-right text-lg"></i>
+            </button>
         </div>
-    </section>
+        
+        <div class="flex justify-center gap-2 mt-6">
+            <?php foreach ($kuliner_madiun as $index => $k): ?>
+                <button onclick="scrollToIndex('kuliner-scroll', <?= $index ?>)" class="kuliner-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
 
     <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
