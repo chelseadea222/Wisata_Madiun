@@ -112,7 +112,7 @@ $koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
             $menu_items = [
                 ['href' => 'booking.php', 'icon' => 'bi-house-door', 'title' => 'Penginapan'],
                 ['href' => 'beli_tiket.php', 'icon' => 'bi-ticket-perforated', 'title' => 'Beli Tiket'],
-                ['href' => '#estimasi', 'icon' => 'bi-map', 'title' => 'Rute Jalan']
+                ['href' => 'peta_rute.php', 'icon' => 'bi-map', 'title' => 'Rute Jalan']
             ];
             foreach($menu_items as $item): ?>
             <a href="<?= $item['href'] ?>" class="group relative bg-white/80 backdrop-blur-xl p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(14,116,144,0.15)] border border-white/50 hover:border-brand/30 flex flex-col items-center text-center gap-6 transition-all duration-500 hover:-translate-y-3">
