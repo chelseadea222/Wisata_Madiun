@@ -4,6 +4,7 @@
  * Deskripsi: Landing Page Terpadu MadiunTrack 
  * Fitur: Navbar Custom, Quick Menu, Destinasi Kotak Panjang, Estimasi & Kuliner Scroll
  */
+session_start(); // Ditambahkan untuk memastikan session berjalan (jika diperlukan untuk fitur login)
 require_once __DIR__ . '/koneksi.php'; 
 
 // 1. DATA DESTINASI WISATA (Lengkap 11 Lokasi di Madiun & Sekitarnya)
@@ -21,17 +22,14 @@ $wisata_madiun = [
     ["nama" => "Hutan Pinus NONGKO IJO", "lokasi" => "Kare", "img" => "https://indonesiatraveler.id/wp-content/uploads/2020/10/Madiun-Nongko-Ijo3-e1602582835404.jpg", "desc" => "Pesona air terjun tersembunyi di lereng Gunung Wilis yang menyuguhkan udara sejuk dan air super jernih."]
 ];
 
-// 2. DATA KOORDINAT DESTINASI (Untuk rute peta)
-// 1. DATA DESTINASI WISATA TERPADU (Koordinat + Gambar + Deskripsi Singkat)
-
-// Tambahkan ini di bagian atas file, bersama variabel lainnya
+// 2. DATA KOORDINAT DESTINASI
 $estimasi_jalur = [
     ["opsi" => "Jalur Dalam Kota", "biaya" => "Rp 15.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800"],
     ["opsi" => "Jalur Lereng Wilis", "biaya" => "Rp 50.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800"],
     ["opsi" => "Jalur Dalam Kota", "biaya" => "Rp 15.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800"],
     ["opsi" => "Jalur Lereng Wilis", "biaya" => "Rp 50.000", "transport" => "Mobil/Motor", "img" => "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800"]
 ];
-$koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
+$koordinat_destinasi = $estimasi_jalur; 
 ?>
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
@@ -80,6 +78,10 @@ $koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
             <div class="hidden md:flex gap-8 font-semibold text-sm text-slate-500 items-center">
                 <a href="#destinasi" class="hover:text-brand transition-colors">Destinasi</a>
                 <a href="#estimasi" class="hover:text-brand transition-colors">Estimasi</a>
+                
+                <a href="logout.php" onclick="return confirm('Apakah Anda yakin ingin keluar?')" class="bg-red-50 text-red-600 hover:bg-red-100 px-5 py-2 rounded-full font-bold transition-all flex items-center gap-2">
+                    <i class="bi bi-box-arrow-right"></i> Keluar
+                </a>
             </div>
         </div>
     </nav>
@@ -246,10 +248,8 @@ $koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
                 });
             };
 
-            // Saat pengguna mengetik
             searchInput.addEventListener('input', filterDestinasi);
 
-            // Saat tombol cari ditekan
             if (btnCari) {
                 btnCari.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -258,7 +258,6 @@ $koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
                 });
             }
 
-            // Saat menekan tombol Enter di keyboard
             searchInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
@@ -272,7 +271,6 @@ $koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
         window.scrollSection = function(containerId, direction) {
             const container = document.getElementById(containerId);
             if (!container) return;
-            // Secara dinamis menghitung lebar kartu agar akurat baik untuk destinasi maupun estimasi
             const firstCard = container.querySelector('div');
             const cardWidth = firstCard ? (firstCard.offsetWidth + 24) : 324; 
             container.scrollBy({ 
@@ -299,10 +297,7 @@ $koordinat_destinasi = $estimasi_jalur; // Agar sinkron dengan kode HTML Anda
                 }
             };
 
-            // Beri jeda sedikit agar layout selesai dimuat, lalu setel link default
             setTimeout(updateRouteLink, 150);
-            
-            // Perbarui saat digeser
             container.addEventListener('scroll', updateRouteLink);
         }
 
