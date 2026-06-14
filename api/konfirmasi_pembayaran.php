@@ -33,84 +33,81 @@ if (isset($_POST['upload_bukti'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Pembayaran - BromoTrack</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Konfirmasi Pembayaran</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../css/konfirmasi_pembayaran.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
 </head>
-<body>
+<body class="bg-slate-100 h-screen flex flex-col">
 
-<div class="container">
-    <div class="glass-card">
+    <header class="h-16 flex-none bg-white border-b border-slate-200 px-6 flex items-center shadow-sm z-20">
+        <button onclick="history.back()" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <h1 class="ml-4 font-bold text-slate-800 text-sm tracking-wide uppercase">Verifikasi Pembayaran</h1>
+    </header>
+
+    <main class="flex-1 flex items-center justify-center p-4">
         
-        <?php if (isset($_GET['pesan']) && $_GET['pesan'] == 'berhasil'): ?>
-            <div class="alert alert-custom alert-dismissible fade show d-flex align-items-center mb-4" role="alert">
-                <i class="bi bi-patch-check-fill fs-4 me-3"></i>
-                <div>
-                    <h6 class="mb-0 fw-bold">Konfirmasi Terkirim!</h6>
-                    <small>Bukti telah diterima. Mohon tunggu verifikasi admin.</small>
-                </div>
-                <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php endif; ?>
-
-        <div class="text-center mb-4">
-            <i class="bi bi-cloud-arrow-up text-warning" style="font-size: 3rem;"></i>
-            <h3 class="fw-bold mt-2">Upload Bukti Bayar</h3>
-            <p class="opacity-75 small">Kirim screenshot bukti transfer Anda di sini.</p>
-        </div>
-
-        <form action="" method="POST" enctype="multipart/form-data">
-            <div class="mb-4">
-                <label class="label-custom">ID Transaksi</label>
-                <input type="text" name="id_transaksi" class="form-control input-custom" 
-                       placeholder="Contoh: TRX-123456" 
-                       value="<?= isset($_GET['id']) ? htmlspecialchars($_GET['id']) : '' ?>" required>
-            </div>
-
-            <div class="mb-4">
-                <label class="label-custom">Foto Bukti Transfer</label>
-                <div class="preview-area" id="imagePreview">
-                    <span class="text-white-50 small" id="previewText">Belum ada foto dipilih</span>
-                </div>
-                <input type="file" name="bukti" id="buktiInput" class="form-control input-custom" accept="image/*" required>
-            </div>
-
-            <div class="alert border-0 small mb-4" style="background: rgba(232, 98, 26, 0.1); color: #ffbc8f;">
-                <i class="bi bi-info-circle-fill me-2"></i> Pastikan Nominal & ID Transaksi terlihat jelas.
-            </div>
-
-            <button type="submit" name="upload_bukti" class="btn btn-confirm">
-                <i class="bi bi-send-fill me-2"></i> Kirim Konfirmasi
-            </button>
+        <div class="bg-white w-full max-w-4xl max-h-[80vh] rounded-3xl shadow-lg flex flex-col lg:flex-row overflow-hidden border border-slate-200">
             
-            <div class="text-center mt-4">
-                <a href="landingpage.php" class="text-white-50 text-decoration-none small"><i class="bi bi-house me-1"></i> Kembali ke Beranda</a>
+            <div class="bg-slate-900 lg:w-1/3 p-8 text-white flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-black">Konfirmasi</h2>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Pastikan data sesuai dengan bukti transfer Anda.</p>
+                </div>
+                <div class="hidden lg:block space-y-4">
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300 italic">
+                        "Verifikasi akan dilakukan admin dalam 1x24 jam."
+                    </div>
+                </div>
             </div>
-        </form>
-    </div>
-</div>
 
-<script>
-    const buktiInput = document.getElementById('buktiInput');
-    const imagePreview = document.getElementById('imagePreview');
-    const previewText = document.getElementById('previewText');
+            <div class="flex-1 p-8 overflow-y-auto">
+                <form action="" method="POST" enctype="multipart/form-data" class="space-y-6">
+                    <div>
+                        <label class="block text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">ID Transaksi</label>
+                        <div class="bg-slate-100 rounded-xl px-4 py-3 text-sm font-bold text-slate-600 border border-slate-200">
+                            <?= htmlspecialchars($_GET['id'] ?? 'TRX-XXXXXX') ?>
+                        </div>
+                        <input type="hidden" name="id_transaksi" value="<?= htmlspecialchars($_GET['id'] ?? '') ?>">
+                    </div>
 
-    buktiInput.addEventListener('change', function() {
-        const file = this.files[0];
-        if (file) {
-            const reader = new FileReader();
-            previewText.style.display = "none";
-            reader.addEventListener('load', function() {
-                imagePreview.innerHTML = '<img src="' + this.result + '">';
-            });
-            reader.readAsDataURL(file);
+                    <div>
+                        <label class="block text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-2">Unggah Bukti</label>
+                        <label for="buktiInput" class="h-40 w-full border-2 border-dashed border-slate-200 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-amber-500 hover:bg-amber-50 transition-all">
+                            <div id="uploadPrompt" class="text-center">
+                                <i class="bi bi-image text-2xl text-slate-300"></i>
+                                <p class="text-[10px] text-slate-400 mt-1">Klik untuk pilih gambar</p>
+                            </div>
+                            <img id="previewImg" class="hidden h-full object-contain p-2">
+                        </label>
+                        <input type="file" name="bukti" id="buktiInput" accept="image/*" class="hidden" required>
+                    </div>
+
+                    <button type="submit" name="upload_bukti" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20 active:scale-95">
+                        Kirim Konfirmasi
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const input = document.getElementById('buktiInput');
+        const preview = document.getElementById('previewImg');
+        const prompt = document.getElementById('uploadPrompt');
+
+        input.onchange = e => {
+            const [file] = input.files;
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.classList.remove('hidden');
+                prompt.classList.add('hidden');
+            }
         }
-    });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
 </body>
 </html>
