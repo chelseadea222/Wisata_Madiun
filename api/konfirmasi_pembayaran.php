@@ -18,10 +18,12 @@ if (isset($_POST['upload_bukti'])) {
     
     if (move_uploaded_file($tmp, $path)) {
         $query = "UPDATE pemesanan_tiket SET bukti_pembayaran='$nama_baru', status='Diproses' WHERE id_transaksi='$id_trx'";
-        if (mysqli_query($koneksi, $query)) {
-            header("Location: konfirmasi_pembayaran.php?pesan=berhasil");
-            exit;
-        } else {
+        // Cari bagian ini di dalam blok if (isset($_POST['upload_bukti']))
+if (mysqli_query($koneksi, $query)) {
+    // Arahkan ke halaman riwayat agar pengguna tahu statusnya sudah berubah
+    header("Location: riwayat_pesanan.php?status=menunggu_verifikasi"); 
+    exit;
+} else {
             echo "<script>alert('Gagal memperbarui data di sistem.');</script>";
         }
     }
