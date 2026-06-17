@@ -19,7 +19,7 @@ if (isset($_POST['update_status'])) {
 }
 
 // --- 2. AMBIL DATA GRAFIK ---
-@require_once 'api_dashboard_admin.php';   
+@require_once 'dashboard_admin.php';   
 @require_once 'proses_dashboard_admin.php'; 
 
 if (!isset($bps_labels) || empty($bps_labels)) {

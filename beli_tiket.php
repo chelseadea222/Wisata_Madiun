@@ -96,7 +96,7 @@ if (isset($_POST['bayar_tiket'])) {
 
     <header class="bg-white h-[70px] flex-none px-6 border-b border-slate-200 flex items-center justify-between shadow-sm">
         <div class="flex items-center gap-4">
-            <button onclick="history.back()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
+            <button onclick="window.location.href='landingpage.php'" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
                 <i class="bi bi-arrow-left text-xl"></i>
             </button>
             <div>
